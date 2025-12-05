@@ -1,0 +1,10 @@
+Name: CHIDUBEM OKOYE Class: CSCI 430 Assignment: Project 2 analysis reflection
+After watching the Oct 14 feedback video, I realized that several corrections
+are needed in my Project 2 Analysis document. 1. 2. Clarifying Processes vs.
+States We treated several operations (like “modify sale price,” “add
+client,” “view product,” etc. g. 3. State Diagram Simplification Our
+original diagram was cluttered with too many transitions and overlapping
+arrows, making it difficult to read. 4. Taking Care of Login Origin Context
+Memory According to the professor, FSMs have no memory, which means they can't
+recall how they got to where they are. 5. Non-FSM Aspects Adjustments Our
+Non-FSM section included some irrelevant items. 6. 7.

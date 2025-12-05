@@ -1,0 +1,22 @@
+Name: CHIDUBEM OKOYE Class: CSCI 430 Assignment: Project 2 analysis reflection
+After watching the Oct 14 feedback video, I realized that several corrections
+are needed in my Project 2 Analysis document. Below is a detailed summary of
+what needs to be corrected. 1. 2. Clarifying Processes vs. States We treated
+several operations (like “modify sale price,” “add client,” “view
+product,” etc. g. , Manager Panel or Salesclerk Panel). Treat sub-operations
+as internal processes, not as transitions or new states. 3. State Diagram
+Simplification Our original diagram was cluttered with too many transitions and
+overlapping arrows, making it difficult to read. The professor advised
+simplifying the diagram to show only major states and transitions: S0 →
+S1/S2/S3 based on login credentials S1 → S2 (“Become Salesclerk”) S2 →
+S3 (“Become Client”) S3 → S4 (Sub-panel selection)S1/S2/S3/S4 → S5
+(Logout/Quit) Correction: we will redraw the state transition diagram clearly,
+removing unnecessary operational details and making transitions distinct and
+readable. 4. Taking Care of Login Origin Context Memory According to the
+professor, FSMs have no memory, which means they can't recall how they got to
+where they are. 5. Non-FSM Aspects Adjustments Our Non-FSM section included some
+irrelevant items. 6. Clarification of Dynamic UI The professor pointed out that
+pop-up windows or dialog boxes (for instance, viewing product details or editing
+client information) are UI dialogues inside an existing panel rather than new
+states. 7. The corrected design will make our FSM model more accurate, modular,
+and aligned with real world UI behavior.

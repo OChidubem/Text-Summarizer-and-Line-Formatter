@@ -1,0 +1,36 @@
+Name: CHIDUBEM OKOYE Class: CSCI 430 Assignment: Project 2 analysis reflection
+After watching the Oct 14 feedback video, I realized that several corrections
+are needed in my Project 2 Analysis document. The main issues were related to
+how we modeled the states and transitions in the FSM (Finite State Machine) for
+the Warehouse GUI system, and how we explained non-FSM aspects. Password
+Authentication Is Not a Separate State In our FSM model, we included “password
+authentication” as part of the Login state process. While the system waits for
+the authentication result, the user cannot interact with the interface so it’s
+part of the transition from S0 (Login) to another state, not a state itself.
+Clarifying Processes vs. States We treated several operations (like “modify
+sale price,” “add client,” “view product,” etc.) as states. The
+professor advised simplifying the diagram to show only major states and
+transitions: S0 → S1/S2/S3 based on login credentials S1 → S2 (“Become
+Salesclerk”) S2 → S3 (“Become Client”) S3 → S4 (Sub-panel
+selection)S1/S2/S3/S4 → S5 (Logout/Quit) Correction: we will redraw the state
+transition diagram clearly, removing unnecessary operational details and making
+transitions distinct and readable. A manager should return to the manager panel
+(rather than the login screen) when they log out and become a salesclerk,
+according to our design. Correction: For the system to return correctly without
+utilizing a stack, we will include an explanation that we use a "context object"
+to remember the user's initial login role. Correction: we will Remove “data
+persistence” as a non-FSM concern in this context and focus on relevant
+UI-level issues like authentication, error handling, and concurrency.
+Clarification of Dynamic UI The professor pointed out that pop-up windows or
+dialog boxes (for instance, viewing product details or editing client
+information) are UI dialogues inside an existing panel rather than new states.
+Correction: We should make it clearer in our explanation that these interactions
+take place inside a state and that the FSM only changes in response to changes
+made to the main panel. Revision of the Summary Our summary section can be
+improved to highlight these corrected concepts: Correction: Emphasize that the
+FSM focuses on UI control flow, while backend tasks like authentication,
+database persistence, and data logic occur independently. Conclusion Through the
+professor’s feedback, I learned the importance of distinguishing processes
+from states, keeping the FSM focused on user interface control, and simplifying
+transitions for clarity. The corrected design will make our FSM model more
+accurate, modular, and aligned with real world UI behavior.

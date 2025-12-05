@@ -1,0 +1,14 @@
+Extended Roadmap: Python Mastery to Software Engineering Readiness
+Phase 1: Python Mastery (Now · Dec 20)
+- Basics · Intermediate · Libraries · Visualization · Projects. - Daily routine: 1 hour learning, 1 hour coding practice, 15 min review. Phase 2: Core Software Engineering Skills (Dec 21 · Jan 31)
+Goal: Build strong foundations beyond Python. Week 6·7: Data Structures & Algorithms
+- Arrays, Strings, Linked Lists, Stacks, Queues. - Practice on LeetCode and HackerRank. Week 8: Advanced DSA
+- Trees, Graphs, Recursion, Dynamic Programming. Phase 3: Development Tools & Practices (Feb 1 · Feb 15)
+- Git & GitHub: Branching, pull requests, version control. Phase 4: Frameworks & Real Projects (Feb 16 · Mar 15)
+- Web Development: Flask or Django. - API Development: REST API with FastAPI. Projects:
+- Blog app (Flask/Django). Phase 5: Interview Prep & Portfolio (Mar 16 · Mar 31)
+- System Design Basics: APIs, scalability, caching. - Portfolio: Upload projects to GitHub, write README files. - Mock Interviews: Practice on platforms like Pramp. Resources:
+- DSA: NeetCode, LeetCode
+- Frameworks: Flask docs, Django docs, FastAPI docs. - System Design: Grokking the System Design Interview
+Next Steps:
+- Extend timeline by 4·6 weeks after Dec 20. - Add DSA practice and projects.

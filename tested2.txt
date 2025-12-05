@@ -1,0 +1,7 @@
+Week 6·7: Data Structures & Algorithms - Arrays, Strings, Linked Lists, Stacks,
+Queues. - Sorting & Searching algorithms. Week 8: Advanced DSA - Trees, Graphs,
+Recursion, Dynamic Programming. - Solve at least 50 coding problems. - Testing:
+unittest or pytest. - Debugging & Logging: Learn best practices. - Behavioral
+Questions: STAR method. - System Design: Grokking the System Design Interview
+Next Steps: - Extend timeline by 4·6 weeks after Dec 20. - Prepare for
+technical interviews.

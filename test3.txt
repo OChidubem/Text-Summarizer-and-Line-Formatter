@@ -1,0 +1,20 @@
+Name: CHIDUBEM OKOYE Class: CSCI 430 Assignment: Project 2 analysis reflection
+After watching the Oct 14 feedback video, I realized that several corrections
+are needed in my Project 2 Analysis document. Below is a detailed summary of
+what needs to be corrected. States We treated several operations (like “modify
+sale price,” “add client,” “view product,” etc. They do not cause a
+change in the overall UI pane; they are just use cases executed from that state.
+State Diagram Simplification Our original diagram was cluttered with too many
+transitions and overlapping arrows, making it difficult to read. Taking Care of
+Login Origin Context Memory According to the professor, FSMs have no memory,
+which means they can't recall how they got to where they are. Non-FSM Aspects
+Adjustments Our Non-FSM section included some irrelevant items. Correction: we
+will Remove “data persistence” as a non-FSM concern in this context and
+focus on relevant UI-level issues like authentication, error handling, and
+concurrency. Clarification of Dynamic UI The professor pointed out that pop-up
+windows or dialog boxes (for instance, viewing product details or editing client
+information) are UI dialogues inside an existing panel rather than new states.
+Conclusion Through the professor’s feedback, I learned the importance of
+distinguishing processes from states, keeping the FSM focused on user interface
+control, and simplifying transitions for clarity. The corrected design will make
+our FSM model more accurate, modular, and aligned with real world UI behavior.

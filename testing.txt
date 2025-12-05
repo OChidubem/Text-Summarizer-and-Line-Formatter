@@ -1,0 +1,74 @@
+Name: CHIDUBEM OKOYE 
+Class: CSCI 430 
+Assignment: Project 2 analysis reflection 
+ 
+After watching the Oct 14 feedback video, I realized that several corrections are needed in my Project 2 Analysis document. The main issues were related to how we modeled the states and 
+transitions in the FSM (Finite State Machine) for the Warehouse GUI system, and how we 
+explained non-FSM aspects. Below is a detailed summary of what needs to be corrected. 
+
+1. Password Authentication Is Not a Separate State 
+In our FSM model, we included “password authentication” as part of the Login state process. The 
+professor explained that password authentication is a process, not a new user interface state. 
+While the system waits for the authentication result, the user cannot interact with the interface 
+so it’s part of the transition from S0 (Login) to another state, not a state itself. 
+Correction: we will Remove “authentication” as a separate step in the FSM table and diagram. 
+Instead, model it as part of the transition between S0 → S1/S2/S3. 
+
+2. Clarifying Processes vs. States 
+We treated several operations (like “modify sale price,” “add client,” “view product,” etc.) as 
+states. The professor explained that these are processes or dialogues that occur within a state 
+(e.g., Manager Panel or Salesclerk Panel). They do not cause a change in the overall UI pane; 
+they are just use cases executed from that state. 
+Correction: we will Keep only the main UI panels (Login, Manager, Salesclerk, Client, Sub-Panel, 
+Logout/Exit) as states. Treat sub-operations as internal processes, not as transitions or new 
+states. 
+
+3. State Diagram Simplification 
+Our original diagram was cluttered with too many transitions and overlapping arrows, making it 
+difficult to read. 
+The professor advised simplifying the diagram to show only major states and transitions: 
+S0 → S1/S2/S3 based on login credentials 
+S1 → S2 (“Become Salesclerk”) 
+S2 → S3 (“Become Client”) 
+S3 → S4 (Sub-panel selection)S1/S2/S3/S4 → S5 (Logout/Quit) 
+Correction: we will redraw the state transition diagram clearly, removing unnecessary 
+operational details and making transitions distinct and readable. 
+
+4. Taking Care of Login Origin Context Memory 
+According to the professor, FSMs have no memory, which means they can't recall how they 
+got to where they are. A manager should return to the manager panel (rather than the login 
+screen) when they log out and become a salesclerk, according to our design. To deal with this, 
+we can use a small memory object rather than a stack to store context information (like the 
+initial login role). 
+Correction: For the system to return correctly without utilizing a stack, we will include an 
+explanation that we use a "context object" to remember the user's initial login role. 
+
+5. Non-FSM Aspects Adjustments 
+Our Non-FSM section included some irrelevant items. The professor clarified: 
+i) Data persistence and backend logic are not FSM issues because FSM only controls the 
+UI flow. 
+ii) Security and authentication are valid but should be explained as backend service calls 
+invoked from the login state. 
+Correction: we will Remove “data persistence” as a non-FSM concern in this context and focus 
+on relevant UI-level issues like authentication, error handling, and concurrency. 
+
+6. Clarification of Dynamic UI 
+The professor pointed out that pop-up windows or dialog boxes (for instance, viewing 
+product details or editing client information) are UI dialogues inside an existing panel 
+rather than new states. 
+Correction: We should make it clearer in our explanation that these interactions take 
+place inside a state and that the FSM only changes in response to changes made to the 
+main panel.
+
+7. Revision of the Summary 
+Our summary section can be improved to highlight these corrected concepts: 
+Correction: Emphasize that the FSM focuses on UI control flow, while backend tasks like 
+authentication, database persistence, and data logic occur independently. The revised 
+model should show simpler state transitions and clear separation between UI (FSM) and 
+backend systems. 
+
+Conclusion 
+Through the professor’s feedback, I learned the importance of distinguishing processes from 
+states, keeping the FSM focused on user interface control, and simplifying transitions for clarity. 
+The corrected design will make our FSM model more accurate, modular, and aligned with real
+world UI behavior.
