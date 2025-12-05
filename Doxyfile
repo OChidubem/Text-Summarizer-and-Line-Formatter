@@ -1,0 +1,217 @@
+# Doxyfile 1.9.1
+
+# Project name
+PROJECT_NAME           = "TSLF - TextRank Summarizer"
+
+# Project version
+PROJECT_NUMBER         = 1.0
+
+# Project brief description
+PROJECT_BRIEF          = "Ultra-Accurate TextRank-Based Summarizer with PDF Support"
+
+# Input files and directories
+INPUT                  = ./tslf.cpp
+
+# Output directory
+OUTPUT_DIRECTORY       = ./doxygen_output
+
+# Generate HTML documentation
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+# Generate LaTeX/PDF documentation
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+
+# Generate man pages
+GENERATE_MAN           = NO
+
+# Generate RTF documentation
+GENERATE_RTF           = NO
+
+# File patterns to process
+FILE_PATTERNS          = *.cpp \
+                         *.h \
+                         *.hpp
+
+# Recursive directory search
+RECURSIVE              = YES
+
+# Extract all entities
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Include source code in documentation
+SOURCE_BROWSER         = YES
+
+# Show referenced by graphs
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# Call graphs
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# Collaboration diagrams
+COLLABORATION_GRAPH    = YES
+
+# Use dot for graph generation
+HAVE_DOT               = YES
+DOT_PATH               = /usr/bin
+
+# Graph generation format
+DOT_IMAGE_FORMAT       = png
+
+# Dot graph transparency
+TRANSPARENT_BACKGROUND = YES
+
+# Search engine support
+SEARCHENGINE           = YES
+
+# Enable server-side search
+SERVER_BASED_SEARCH    = NO
+
+# HTML theme options
+HTML_DYNAMIC_SECTIONS  = YES
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+
+# LaTeX options
+USE_PDFLATEX           = YES
+PDF_HYPERLINKS         = YES
+
+# Markdown support
+MARKDOWN_SUPPORT       = YES
+
+# Include path
+INCLUDE_PATH           = 
+
+# Preprocessor defines
+PREDEFINED             = __cplusplus=201103L
+
+# Verbatim headers
+VERBATIM_HEADERS       = NO
+
+# Use shorter file names
+SHORT_NAMES            = NO
+
+# Sort members by name
+SORT_MEMBER_DOCS       = YES
+
+# Group members by type
+SORT_BY_SCOPE_NAME     = NO
+
+# Optimize for C++
+OPTIMIZE_FOR_SMALL_OBJECTS = YES
+
+# Maximum initializer lines
+MAX_INITIALIZER_LINES  = 30
+
+# Show member group documentation
+SHOW_GROUPED_MEMBERS_INC = NO
+
+# Internal documentation
+INTERNAL_DOCS          = NO
+
+# Show file documentation in source browser
+SOURCE_TOOLTIPS        = YES
+
+# Use mathjax for formulas
+USE_MATHJAX            = YES
+MATHJAX_CODEBASE       = https://cdn.jsdelivr.net/npm/mathjax@2
+
+# Auto link support
+AUTOLINK_SUPPORT       = YES
+
+# Set encoding
+DOXYFILE_ENCODING      = UTF-8
+
+# Warn if undocumented
+WARN_IF_UNDOCUMENTED   = YES
+
+# Warn if documentation missing
+WARN_NO_PARAMDOC       = NO
+
+# Use quiet mode
+QUIET                  = NO
+
+# Strip from path
+STRIP_FROM_PATH        = ./
+
+# Strip from inc path
+STRIP_FROM_INC_PATH    = 
+
+# Tab size for code
+TAB_SIZE               = 4
+
+# Aliases for commands
+ALIASES                = 
+
+# Exclude patterns
+EXCLUDE_PATTERNS       = */test/* \
+                         */tests/*
+
+# Example path
+EXAMPLE_PATH           = 
+
+# Image path
+IMAGE_PATH             = 
+
+# Input filter
+INPUT_FILTER           = 
+
+# Filter patterns
+FILTER_PATTERNS        = 
+
+# Distutils ignore patterns
+IGNORE_PREFIX          = 
+
+# TCL library
+TCL_LIBRARY            = 
+
+# Resource URL
+RESOURCE_URL           = 
+
+# Use external DTD
+USE_MATHJAX_EXT        = NO
+
+# MathJax CDN
+MATHJAX_EXTENSIONS    = 
+
+# Clang assisted parsing
+CLANG_ASSISTED_PARSING = NO
+
+# Clang add on
+CLANG_ADD_ON_LIBS      = 
+
+# HTML header
+HTML_HEADER            = 
+
+# HTML footer
+HTML_FOOTER            = 
+
+# HTML extra stylesheet
+HTML_EXTRA_STYLESHEET  = 
+
+# Generate tree view
+GENERATE_TREEVIEW      = YES
+
+# Tree view width
+TREEVIEW_WIDTH         = 250
+
+# External TOC
+EXT_LINKS_IN_WINDOW    = NO
+
+# Formula font size
+FORMULA_FONTSIZE       = 12
+
+# Formula transparent background
+FORMULA_TRANSPARENT    = YES
+
+# Google Analytics ID
+GOOGLE_ANALYTICS_ID    = 
+
+# Interactive SVG
+INTERACTIVE_SVG        = NO
