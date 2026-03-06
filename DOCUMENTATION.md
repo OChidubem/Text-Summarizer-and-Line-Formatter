@@ -37,6 +37,7 @@
 - ✅ **Graceful Degradation**: Works without pdftotext (falls back to .txt)
 - ✅ **PDF Conversion**: Uses pdftotext with -layout flag for structure preservation
 - ✅ **Compression Metrics**: Shows compression ratio for quality assessment
+- ✅ **Bullet Point Format**: Optional bullet-point output (one sentence per line, prefixed with •) for resumes and presentations
 
 ### Robustness
 - ✅ **Error Handling**: Comprehensive error messages and fallback strategies
@@ -164,10 +165,11 @@ Where:
 
 ### Step 6: Summary Assembly & Output
 ```
-Input: Original sentences, selected indices
+Input: Original sentences, selected indices, format choice
 Process:
   1. Concatenate sentences in original order
-  2. Join with spaces
+  2. Plain text: join with spaces
+     Bullet points: prefix each sentence with "• ", one per line
   3. Write to output file
   4. Calculate compression ratio
   5. Report statistics
@@ -212,6 +214,14 @@ Ultra-Accurate TextRank Summarizer (TXT + PDF)
 Input file (.txt or .pdf): document.txt
 Output file: summary.txt
 How many words in the summary? 150
+Output format? (1) Plain text  (2) Bullet points: 2
+```
+
+**Example bullet-point output (`summary.txt`):**
+```
+• Artificial intelligence is transforming industries around the world.
+• Machine learning algorithms enable computers to learn from data without explicit programming.
+• Data scientists work with large datasets to train and validate machine learning models.
 ```
 
 ---
@@ -376,12 +386,22 @@ double sim = cosine_similarity(a, b);  // 1.0
 **Returns:** Indices of selected sentences in original order
 
 #### `string build_summary(const vector<string>& sentences, const vector<size_t>& idx)`
-**Purpose:** Assemble final summary
+**Purpose:** Assemble final summary as plain text
 
 **Process:**
 1. For each index: append sentence + space
 2. Join in original order
 3. Return concatenated string
+
+#### `string build_summary_bullets(const vector<string>& sentences, const vector<size_t>& idx)`
+**Purpose:** Assemble final summary as bullet-point list
+
+**Process:**
+1. For each index: prepend "• " and append newline
+2. Place each sentence on its own line
+3. Return formatted string
+
+**Use case:** Resume bullet points, presentations, structured lists
 
 #### `bool read_target_words(size_t& n)`
 **Purpose:** Get validated word count from user
