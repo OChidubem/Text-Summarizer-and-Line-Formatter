@@ -12,27 +12,36 @@ It scores sentence importance with a graph-ranking approach and applies MMR to r
 ## Repository Layout
 
 ```text
-Text-Summarizer-and-Line-Formatter/
-├── src/
-│   └── tslf.cpp
-├── include/
-├── tests/
-│   ├── sample_input.txt
-│   ├── expected_output.txt
-│   └── fixtures/
-├── docs/
-│   ├── DOCUMENTATION.md
-│   ├── Doxyfile
-│   └── doxygen_output/
-├── examples/
-│   ├── before.txt
-│   └── after.txt
-├── scripts/
-│   ├── test_summarizer.sh
-│   └── build_pdf.sh
-├── Makefile
-├── README.md
-└── .gitignore
++--------------------------------------------------+
+|         Text-Summarizer-and-Line-Formatter       |
++--------------------------------------------------+
+|
+|-- src/
+|   |-- tslf.cpp
+|
+|-- include/
+|
+|-- tests/
+|   |-- sample_input.txt
+|   |-- expected_output.txt
+|   `-- fixtures/
+|
+|-- docs/
+|   |-- DOCUMENTATION.md
+|   |-- Doxyfile
+|   `-- doxygen_output/
+|
+|-- examples/
+|   |-- before.txt
+|   `-- after.txt
+|
+|-- scripts/
+|   |-- test_summarizer.sh
+|   `-- build_pdf.sh
+|
+|-- Makefile
+|-- README.md
+`-- .gitignore
 ```
 
 ## Requirements
