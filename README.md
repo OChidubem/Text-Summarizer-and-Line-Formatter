@@ -1,37 +1,63 @@
 # Text-Summarizer-and-Line-Formatter
 
-TSLF is a C++ command-line text summarizer that uses a TextRank-style graph algorithm to generate extractive summaries from `.txt` and `.pdf` inputs.
+TSLF is a C++ TextRank-based extractive summarizer for `.txt` and `.pdf` documents.
+It scores sentence importance with a graph-ranking approach and applies MMR to reduce redundancy.
 
-## Features
+## Why This Project
 
-- TextRank-inspired sentence scoring
-- MMR-based sentence selection to reduce redundancy
-- Position-aware weighting for better coherence
-- Interactive CLI workflow
-- PDF support via `pdftotext` (optional)
+- Demonstrates practical NLP techniques in C++ (TextRank + MMR)
+- Includes PDF ingestion and robust sentence/token preprocessing
+- Structured as a maintainable utility project, not a single-file dump
+
+## Repository Layout
+
+```text
+Text-Summarizer-and-Line-Formatter/
+├── src/
+│   └── tslf.cpp
+├── include/
+├── tests/
+│   ├── sample_input.txt
+│   ├── expected_output.txt
+│   └── fixtures/
+├── docs/
+│   ├── DOCUMENTATION.md
+│   ├── Doxyfile
+│   └── doxygen_output/
+├── examples/
+│   ├── before.txt
+│   └── after.txt
+├── scripts/
+│   ├── test_summarizer.sh
+│   └── build_pdf.sh
+├── Makefile
+├── README.md
+└── .gitignore
+```
 
 ## Requirements
 
-- Linux/macOS with `g++`
-- C++11 or newer
-- Optional for PDF input: `pdftotext` from Poppler
+- `g++` with C++11 support
+- Optional for PDF input: `pdftotext` (Poppler)
 
-Install PDF support on Ubuntu/Debian:
+Ubuntu/Debian:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y poppler-utils
+sudo apt-get install -y g++ poppler-utils
 ```
 
 ## Build
 
-From the repository root:
-
 ```bash
-g++ -std=c++11 -O2 -Wall tslf.cpp -o tslf
+make
 ```
 
-This creates the executable `./tslf`.
+or directly:
+
+```bash
+g++ -std=c++11 -O2 -Wall src/tslf.cpp -o tslf
+```
 
 ## Run
 
@@ -39,64 +65,50 @@ This creates the executable `./tslf`.
 ./tslf
 ```
 
-You will be prompted for:
+Prompts:
 
 1. Input file path (`.txt` or `.pdf`)
 2. Output file path
 3. Target summary word count (`1` to `10000`)
 
-Example session:
+Example:
 
 ```text
 Ultra-Accurate TextRank Summarizer (TXT + PDF)
 
-Input file (.txt or .pdf): sample_input.txt
+Input file (.txt or .pdf): tests/sample_input.txt
 Output file: summary.txt
 How many words in the summary? 50
 Summary written to 'summary.txt' (46 words, 38.0% compression).
 ```
 
-## Quick Test
-
-The repo includes a simple test script:
+## Test
 
 ```bash
-chmod +x test_summarizer.sh
-./test_summarizer.sh
+make test
 ```
 
-This runs two sample summarizations and prints generated output.
-
-## Project Files
-
-- `tslf.cpp`: Main C++ source code
-- `test_summarizer.sh`: Basic test runner for sample inputs
-- `sample_input.txt`: Example input text
-- `DOCUMENTATION.md`: Extended technical documentation
-- `Doxyfile`: Doxygen configuration
-- `doxygen_documentation.html`: Generated API docs in HTML form
-- `build_pdf.sh`: Helper script to build Doxygen PDF output
-
-## Generate Doxygen Docs
-
-Generate documentation files:
+or:
 
 ```bash
-doxygen Doxyfile
+bash scripts/test_summarizer.sh
 ```
 
-If LaTeX output exists and you want a PDF:
+## Documentation
+
+Generate API docs:
 
 ```bash
-chmod +x build_pdf.sh
-./build_pdf.sh
+make docs
 ```
 
-## Exit Codes and Errors
+Build documentation PDF (if LaTeX toolchain is available):
 
-- Returns non-zero on invalid input, missing files, or output write failure
-- If PDF conversion tools are missing, use `.txt` input or install Poppler
+```bash
+bash scripts/build_pdf.sh
+```
 
-## License
+## Notes
 
-No explicit license file is currently included in this repository.
+- Generated binaries and temporary outputs are ignored by `.gitignore`
+- Large/random fixtures are kept under `tests/fixtures/` to keep root clean

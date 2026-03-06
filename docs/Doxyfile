@@ -1,0 +1,49 @@
+# Doxyfile 1.9.1
+
+PROJECT_NAME           = "TSLF - TextRank Summarizer"
+PROJECT_NUMBER         = 1.0
+PROJECT_BRIEF          = "Ultra-Accurate TextRank-Based Summarizer with PDF Support"
+
+INPUT                  = ./src/tslf.cpp
+OUTPUT_DIRECTORY       = ./docs/doxygen_output
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+
+FILE_PATTERNS          = *.cpp \
+                         *.h \
+                         *.hpp
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+
+SOURCE_BROWSER         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+COLLABORATION_GRAPH    = YES
+
+HAVE_DOT               = YES
+DOT_PATH               = /usr/bin
+DOT_IMAGE_FORMAT       = png
+TRANSPARENT_BACKGROUND = YES
+
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+MARKDOWN_SUPPORT       = YES
+PREDEFINED             = __cplusplus=201103L
+
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = NO
+QUIET                  = NO
+
+EXCLUDE_PATTERNS       = */test/* \
+                         */tests/*

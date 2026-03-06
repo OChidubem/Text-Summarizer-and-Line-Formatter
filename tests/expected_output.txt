@@ -1,0 +1,1 @@
+Artificial intelligence is transforming industries around the world. Machine learning algorithms enable computers to learn from data without explicit programming. Data scientists work with large datasets to train and validate machine learning models. Governments are developing regulations to ensure AI systems are safe, fair, and transparent.

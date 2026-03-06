@@ -1,1 +1,20 @@
+# Build artifacts
+tslf
+tslf_test
+*.o
+
+# Generated summaries
+summary.txt
+summary_*.txt
+
+# Doxygen output
 doxygen_output/
+docs/doxygen_output/
+
+# Optional generated docs
+docs/*.html
+docs/*.pdf
+
+# Temp files
+*.tmp
+*.tslf_tmp.txt
