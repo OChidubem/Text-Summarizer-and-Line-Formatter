@@ -78,6 +78,7 @@ vector<size_t> select_sentences_textrank(const vector<string>& sentences,
                                           const vector<double>& scores,
                                           size_t target_words);
 string build_summary(const vector<string>& sentences, const vector<size_t>& idx);
+string build_summary_bullets(const vector<string>& sentences, const vector<size_t>& idx);
 bool read_target_words(size_t& n);
 
 /* ====================================================================
@@ -570,17 +571,18 @@ vector<size_t> select_sentences_textrank(const vector<string>& sentences,
  * @param sentences All original sentences from document
  * @param idx Vector of sentence indices to include in summary
  *
- * @return The final summary text as a single string
+ * @return The final summary text as a single string, ending with a newline
  *
  * @algorithm
  * 1. Create output string stream
  * 2. For each index in idx:
  *    - Add space if not first sentence
  *    - Append the sentence from sentences vector
- * 3. Return assembled string
+ * 3. Append trailing newline
+ * 4. Return assembled string
  *
  * @note Sentences are already in original order (ensured by select_sentences_textrank)
- * @note No additional formatting is applied
+ * @note Trailing newline ensures consistent file output alongside build_summary_bullets
  *
  * @see select_sentences_textrank()
  */
@@ -589,6 +591,28 @@ string build_summary(const vector<string>& sentences, const vector<size_t>& idx)
     for (size_t i = 0; i < idx.size(); ++i) {
         if (i > 0) oss << " ";
         oss << sentences[idx[i]];
+    }
+    oss << "\n";
+    return oss.str();
+}
+
+/**
+ * @brief Assembles selected sentences into a bullet-point formatted summary.
+ * @details Each selected sentence is placed on its own line prefixed with a
+ *          bullet character (\xE2\x80\xA2), making the output suitable for
+ *          resumes, presentations, or any context requiring list-style output.
+ *
+ * @param sentences All original sentences from document
+ * @param idx Vector of sentence indices to include in summary
+ *
+ * @return The final summary text with one bullet point per sentence
+ *
+ * @see build_summary(), select_sentences_textrank()
+ */
+string build_summary_bullets(const vector<string>& sentences, const vector<size_t>& idx) {
+    ostringstream oss;
+    for (size_t i = 0; i < idx.size(); ++i) {
+        oss << "\xE2\x80\xA2 " << sentences[idx[i]] << "\n";
     }
     return oss.str();
 }
@@ -681,6 +705,16 @@ int main() {
         return 1;
     }
 
+    cout << "Output format? (1) Plain text  (2) Bullet points: ";
+    int format_choice = 1;
+    if (!(cin >> format_choice) || (format_choice != 1 && format_choice != 2)) {
+        cout << "Invalid choice, defaulting to plain text.\n";
+        format_choice = 1;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    bool use_bullets = (format_choice == 2);
+
     string text;
     if (!read_any_input_file(in_file, text)) {
         return 1;
@@ -699,14 +733,16 @@ int main() {
 
     auto scores = textrank(sentences);
     auto selected = select_sentences_textrank(sentences, scores, target);
-    string summary = build_summary(sentences, selected);
+    string summary = use_bullets
+                     ? build_summary_bullets(sentences, selected)
+                     : build_summary(sentences, selected);
 
     ofstream out(out_file.c_str());
     if (!out.is_open()) {
         cerr << "Cannot open output file: " << out_file << endl;
         return 1;
     }
-    out << summary << '\n';
+    out << summary;
     out.close();
 
     size_t summary_words = count_words(summary);
